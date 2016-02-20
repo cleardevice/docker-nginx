@@ -59,7 +59,7 @@ The [registrator](https://github.com/gliderlabs/registrator) container is respon
 
 The [consul](https://github.com/progrium/docker-consul) container maintain the service registry. 
 
-The [nginx](https://github.com/1science/docker-nginx) use [S6](http://skarnet.org/software/s6/) as system init to run nginx and [consul-template](https://github.com/hashicorp/consul-template) in the same container. 
+The [nginx](https://github.com/cleardevice/docker-nginx) use [S6](http://skarnet.org/software/s6/) as system init to run nginx and [consul-template](https://github.com/hashicorp/consul-template) in the same container. 
 
 The role of consul-template is to generate a valid nginx configuration file in ```/etc/nginx/conf.d``` directory based on a [template](templates/app.conf) and reload Nginx when new services are registered in Consul.
 

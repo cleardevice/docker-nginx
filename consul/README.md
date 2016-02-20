@@ -1,8 +1,8 @@
-[![](https://badge.imagelayers.io/1science/nginx:consul.svg)](https://imagelayers.io/?images=1science/nginx:consul 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/cleardevice/nginx:consul.svg)](https://imagelayers.io/?images=cleardevice/nginx:consul 'Get your own badge on imagelayers.io')
 
 # Consul Nginx image
 
-This image inherits from the ```1science/nginx``` image adding support to manage the  Nginx configuration through [Consul](https://consul.io/)
+This image inherits from the ```cleardevice/nginx``` image adding support to manage the  Nginx configuration through [Consul](https://consul.io/)
 
 It includes : 
   - [S6 Overlay](https://github.com/just-containers/s6-overlay) to properly manage multiple services in one container
@@ -16,14 +16,14 @@ It includes :
 The following example mount the [Consul template](https://github.com/hashicorp/consul-template) configuration in the container: 
 
 ```
-docker run --name nginx-consul -v etc/consul-template:/etc/consul-template:ro -d 1science/nginx:consul
+docker run --name nginx-consul -v etc/consul-template:/etc/consul-template:ro -d cleardevice/nginx:consul
 
 ```
 
 or you can create your own ```Dockerfile```:
 
 ```
-FROM 1science/nginx:consul
+FROM cleardevice/nginx:consul
 
 ADD etc/consul-template /etc/consul-template
 ```
@@ -38,7 +38,7 @@ docker run --name nginx-consul \
 -e FILECONSUL_PREFIX=app \
 -e FILECONSUL_DC=local \
 -e FILECONSUL_BASEPATH=/app/etc \
--d 1science/nginx:consul
+-d cleardevice/nginx:consul
 ```
 
 This synchronize the configuration files in Consul defined in the KV folder ```app``` in the local directory ```/app/etc```, then [reload](etc/periodic/1min/fileconsul) the nginx process.
