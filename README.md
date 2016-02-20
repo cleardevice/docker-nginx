@@ -1,8 +1,8 @@
-[![](https://badge.imagelayers.io/1science/nginx:latest.svg)](https://imagelayers.io/?images=1science/nginx:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/cleardevice/nginx:latest.svg)](https://imagelayers.io/?images=cleardevice/nginx:latest 'Get your own badge on imagelayers.io')
 
 # What is Nginx?
 
-![logo](https://raw.githubusercontent.com/1science/docker-nginx/latest/logo.png)
+![logo](https://raw.githubusercontent.com/cleardevice/docker-nginx/latest/logo.png)
 
 Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer, HTTP cache, and a web server (origin server). The nginx project started with a strong focus on high concurrency, high performance and low memory usage. It is licensed under the 2-clause BSD-like license and it runs on Linux, BSD variants, Mac OS X, Solaris, AIX, HP-UX, as well as on other *nix flavors. It also has a proof of concept port for Microsoft Window..
 
@@ -14,13 +14,13 @@ Nginx (pronounced "engine-x") is an open source reverse proxy server for HTTP, H
 ## Hosting some simple static content
 
 ```
-docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d 1science/nginx
+docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d cleardevice/nginx
 ```
 
 Alternatively, a simple `Dockerfile` can be used to generate a new image that includes the necessary content (which is a much cleaner solution than the bind mount above):
 
 ```
-FROM 1science/nginx
+FROM cleardevice/nginx
 COPY static-html-directory /usr/share/nginx/html
 ```
 
@@ -41,7 +41,7 @@ Then you can hit `http://localhost:8080` or `http://host-ip:8080` in your browse
 ## Complex configuration
 
 ```
-docker run --name some-nginx -v /some/nginx.conf:/etc/nginx/nginx.conf:ro -d 1science/nginx
+docker run --name some-nginx -v /some/nginx.conf:/etc/nginx/nginx.conf:ro -d cleardevice/nginx
 ```
 
 For information on the syntax of the Nginx configuration files, see [the official documentation](http://nginx.org/en/docs/) (specifically the [Beginner's Guide](http://nginx.org/en/docs/beginners_guide.html#conf_structure)).
@@ -57,7 +57,7 @@ docker cp some-nginx:/etc/nginx/nginx.conf /some/nginx.conf
 As above, this can also be accomplished more cleanly using a simple `Dockerfile`:
 
 ```
-FROM 1science/nginx
+FROM cleardevice/nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 ```
 
@@ -75,7 +75,7 @@ To do that we've built an [image](consul) based on [Consul](https://consul.io/) 
 
 # Build
 
-This project is configured as an [automated build in Dockerhub](https://hub.docker.com/r/1science/nginx/). 
+This project is configured as an [automated build in Dockerhub](https://hub.docker.com/r/cleardevice/nginx/). 
 
 Each branch give the related image tag.  
 

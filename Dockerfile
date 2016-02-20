@@ -2,10 +2,10 @@
 # Nginx image
 #
 
-FROM 1science/alpine:3.1
+FROM cleardevice/alpine:latest
 
 # Nginx version
-ENV NGINX_VERSION=1.9.6 NGINX_HOME=/usr/share/nginx
+ENV NGINX_VERSION=1.9.9 NGINX_HOME=/usr/share/nginx
 
 # Build Nginx from source
 RUN apk-install openssl-dev pcre-dev zlib-dev wget build-base && \
